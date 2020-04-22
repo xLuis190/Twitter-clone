@@ -1,0 +1,33 @@
+<%- include ('Head.ejs') %>
+        <div class="container">
+            <div class=" center-align jumbotron white z-depth-1">
+                <%- include('TweetForm.ejs') %>
+            </div>
+            <%for(x in tweets){%>
+                <div class=" jumbotron white z-depth-1 center-align">
+                    <p class="right-align"><i class="fas fa-user" ></i> <%= tweets[x].username%> </p>
+                    <p class="right-align"> <%=tweets[x].date[0] %></p>
+                    <%if(tweets[x].likedBy.length >=1){%>
+                            <p class="right-align wow fadeIn"><%= tweets[x].likedBy.length %> likes</p>
+                    <%}%>
+                     <h2><%= tweets[x].tweet %></h2>
+                     <form action="/like" method="post">
+                        <input type="text" name="twtVal" value="<%=[tweets[x].tweet, tweets[x].username]%>">
+        
+                        <%if(tweets[x].likedBy.includes(tweets[x].username)) {%>
+                                <button type="submit" class="btn light-blue lighten-3 wow fadeIn" ><i class="fas fa-heart-broken "></i></button>
+                        <%} else {%>
+                                <button type="submit" class="btn light-blue lighten-3 wow fadeIn" ><i class="fas fa-heart "></i></button>
+                        <%}%>
+                    </form>
+                     
+                </div>
+                <%}%>
+                
+        </div>
+    <script>
+        M.AutoInit()
+        new WOW().init();
+    </script>
+</body>
+</html>

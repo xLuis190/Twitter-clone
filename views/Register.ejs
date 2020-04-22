@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+        integrity="sha256-z6FznuNG1jo9PP3/jBjL6P3tvLMtSwiVAowZPOgo56U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        new WOW().init()
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="registerForm" class="center-align z-depth-1 white " action="/register" method="POST">
+            <% if(sucess !== undefined){ %>
+                <h3 class="msg msg-sucess z-depth-3"><%= sucess %></h3>
+                <%} %>
+        
+                <% if(err !== undefined && err.length > 1 ){ %>
+                    <%for(e in err){%>
+                         <p class="msg msg-error z-depth-3 scale-transition"><%= err[e] %></p>
+                         <%}%>
+                <%} %>
+            <h1>register pls</h1>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="username" defaultValue=<%=  %> />
+                    <label for="username">Type an username</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="email" name="email" defaultValue=<%=  %> />
+                    <label for="email">Whats ur email?</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="password" name="password" />
+                    <label for="password">Enter a password</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="password" name="confirmPassword" />
+                    <label for="confirmPassword">Confirm password</label>
+                </div>
+                <input type="submit" class="btn blue " value="Sign up" />
+            </div>
+            <a href="#" class="btn white customBTn">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="#" class="btn white customBTn"> <i class="fab fa-twitter"></i> Twitter</a>
+
+        </form>
+        
+
+
+    </div>
+</body>
+
+</html>

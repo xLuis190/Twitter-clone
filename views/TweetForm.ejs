@@ -1,0 +1,12 @@
+<form action="/post" method="post">
+    <div class="input-field ">
+        <div class="row">
+            <input autoComplete="off" type="text" id="tweetBox" placeholder="What is on your mind?" name="tweetBox" />
+        </div>
+        <input type="submit" value="post" class="btn " />
+    </div>
+</form>
+
+<%tweets.sort(function(a, b){%>
+    <% return new Date(b.date) - new Date(a.date);%>
+<%})%>
