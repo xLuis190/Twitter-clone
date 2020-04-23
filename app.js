@@ -9,7 +9,6 @@ LocalStrategy = require('passport-local').Strategy
 mainRoute = require('./routes/mainRoute')
 User = require('./models/UserModel')
 registerRoute = require('./routes/registerRoute')
-url = "mongodb+srv://xLuis:Hello123@cluster0-ltdiz.mongodb.net/AppDB?retryWrites=true&w=majority"
 port = 80
 //Mongoose
 mongoose.set('useCreateIndex', true);
